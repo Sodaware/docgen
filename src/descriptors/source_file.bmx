@@ -38,6 +38,10 @@ Type SourceFile
 		Self.types.AddLast(t)
 	End Method
 	
+	Method getFileName:String()
+		Return StripDir(Self.path)
+	End Method
+	
 	Method New()
 		
 		Self.includes  = New TList
