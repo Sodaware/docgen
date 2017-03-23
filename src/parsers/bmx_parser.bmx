@@ -467,8 +467,11 @@ Type BmxParser
 					If p Then
 						p.description = node.getContent().Trim()
 					Else
-						' TODO: Warn
-						Self._log.logWarning("could not find parameter " + node.getAttribute("name") + " for descriptor " + descriptor.name)
+						' Documentation for an unknown parameter
+						Local message:String = "Could not find parameter `" + node.getAttribute("name") + "`"
+						message :+ " for " + descriptor.getKeyword() + " `" + descriptor.name + "`"
+						message :+ " (" + descriptor.file.getFileName() + ")"
+						Self._log.logWarning(message)
 					EndIf
 
 				
