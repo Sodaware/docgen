@@ -16,4 +16,8 @@ Import "callable_descriptor.bmx"
 
 Type FunctionDescriptor Extends CallableDescriptor
 	Field locals:TList = New TList
+	
+	Method getKeyword:String()
+		Return "function"
+	End Method
 End Type

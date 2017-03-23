@@ -16,4 +16,9 @@ Import "callable_descriptor.bmx"
 
 Type MethodDescriptor Extends CallableDescriptor
 	Field locals:TList = New TList
+	
+	Method getKeyword:String()
+		Return "method"
+	End Method
+	
 End Type

@@ -34,4 +34,9 @@ Type AbstractDescriptor
 	Field replacedWith:String
 	Field example:String
 	
+	''' <summary>Get the keyword that defines this descriptor, e.g. "Function" or "Method".</summary>
+	Method getKeyword:String()
+		Return ""
+	End Method
+	
 End Type
