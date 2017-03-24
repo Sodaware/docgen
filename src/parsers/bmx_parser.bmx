@@ -563,15 +563,20 @@ Type BmxParser
 				pos:+ 1
 				
 			ElseIf lexer.GetToken(pos + 3).kind = TToken.TOK_ID Then
-				
-				' Absorb everything until end of line
-				Local i:Int = pos + 3
-				While lexer.GetToken(i).kind <> TToken.TOK_NEWLINE
-					variable.defaultValue:+ lexer.GetToken(i).ToString()
-					i:+ 1
-					pos:+ 1
-				Wend
-						
+			
+				If lexer.GetToken(pos + 3).ToString().ToLower() = "true" Then
+					variable.defaultValue = lexer.GetToken(pos + 3).ToString()
+				ElseIf lexer.GetToken(pos + 3).ToString().ToLower() = "false" Then
+					variable.defaultValue = lexer.GetToken(pos + 3).ToString()
+				Else
+					' Absorb everything until end of line
+					Local i:Int = pos + 3
+					While lexer.GetToken(i).kind <> TToken.TOK_NEWLINE
+						variable.defaultValue:+ lexer.GetToken(i).ToString()
+						i:+ 1
+						pos:+ 1
+					Wend
+				EndIf
 			Else
 				variable.defaultValue = lexer.GetToken(pos + 3).ToString()
 			End If
