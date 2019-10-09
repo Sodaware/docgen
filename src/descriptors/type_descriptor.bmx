@@ -5,7 +5,7 @@
 ' -- well as its fields, methods and functions.
 ' --
 ' -- This file is part of "docgen" (https://www.sodaware.net/docgen/)
-' -- Copyright (c) 2016-2017 Phil Newton
+' -- Copyright (c) 2016-2019 Phil Newton
 ' --
 ' -- See COPYING for full license information.
 ' ------------------------------------------------------------------------------
@@ -16,13 +16,13 @@ SuperStrict
 Import "abstract_descriptor.bmx"
 
 Type TypeDescriptor Extends AbstractDescriptor
-	
+
 	Field fields:TList
 	Field constants:TList
 	Field globals:TList
 	Field methods:TList
 	Field functions:TList
-	
+
 	Method New()
 		Self.fields = New TList
 		Self.constants = New TList
@@ -30,5 +30,5 @@ Type TypeDescriptor Extends AbstractDescriptor
 		Self.methods = New TList
 		Self.functions = New TList
 	End Method
-	
+
 End Type

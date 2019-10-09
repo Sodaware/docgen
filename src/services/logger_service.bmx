@@ -4,7 +4,7 @@
 ' -- Service for configuring and accessing the application logger.
 ' --
 ' -- This file is part of "docgen" (https://www.sodaware.net/docgen/)
-' -- Copyright (c) 2016-2017 Phil Newton
+' -- Copyright (c) 2016-2019 Phil Newton
 ' --
 ' -- See COPYING for full license information.
 ' ------------------------------------------------------------------------------
@@ -17,9 +17,9 @@ Import "../loggers/console_logger.bmx"
 
 
 Type LoggerService Extends Service
-	
+
 	Field _log:BaseLogger
-	
+
 	Method getLogger:BaseLogger()
 		Return Self._log
 	End Method
@@ -32,5 +32,5 @@ Type LoggerService Extends Service
 	Method unloadService()
 		Self._log = Null
 	End Method
-	
+
 End Type

@@ -7,7 +7,7 @@
 ' -- parsing issues.
 ' --
 ' -- This file is part of "docgen" (https://www.sodaware.net/docgen/)
-' -- Copyright (c) 2016-2017 Phil Newton
+' -- Copyright (c) 2016-2019 Phil Newton
 ' --
 ' -- See COPYING for full license information.
 ' ------------------------------------------------------------------------------
@@ -18,9 +18,9 @@ SuperStrict
 Type BaseLogger
 
 	Const LOG_LEVEL_VERBOSE:Int	= 1
-	Const LOG_LEVEL_INFO:Int 	= 2
+	Const LOG_LEVEL_INFO:Int	= 2
 	Const LOG_LEVEL_WARNING:Int = 4
-	Const LOG_LEVEL_ERROR:Int 	= 8
+	Const LOG_LEVEL_ERROR:Int	= 8
 	Const LOG_LEVEL_ALL:Int     = 15
 
 	Field _logLevel:Int = LOG_LEVEL_ALL
@@ -33,20 +33,20 @@ Type BaseLogger
 
 	Method logInfo(message:String)
 	End Method
-	
+
 	Method logVerbose(message:String)
 	End Method
-	
+
 	Method logWarning(message:String)
 		Self._warningCount:+ 1
 	End Method
-	
+
 	Method logSuccess(message:String)
 
 	End Method
 
 	Method logFailure(message:String)
-		
+
 	End Method
-	
+
 End Type

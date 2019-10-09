@@ -5,7 +5,7 @@
 ' -- the application.
 ' --
 ' -- This file is part of "docgen" (https://www.sodaware.net/docgen/)
-' -- Copyright (c) 2016-2017 Phil Newton
+' -- Copyright (c) 2016-2019 Phil Newton
 ' --
 ' -- See COPYING for full license information.
 ' ------------------------------------------------------------------------------
@@ -20,13 +20,13 @@ Import "service.bmx"
 
 
 Type ParserService Extends Service
-	
+
 	Method InitialiseService()
-		
+
 	End Method
 
 	Method unloadService()
-		
+
 	End Method
-	
+
 End Type

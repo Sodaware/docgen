@@ -4,7 +4,7 @@
 ' -- Service that maintains the application's configuration.
 ' --
 ' -- This file is part of "docgen" (https://www.sodaware.net/docgen/)
-' -- Copyright (c) 2016-2017 Phil Newton
+' -- Copyright (c) 2016-2019 Phil Newton
 ' --
 ' -- See COPYING for full license information.
 ' ------------------------------------------------------------------------------
@@ -22,46 +22,46 @@ Import "service.bmx"
 Type ConfigurationService Extends Service
 
 	Field m_Config:Config			'''< Internal configuration object
-	
-	
+
+
 	' ------------------------------------------------------------
 	' -- Configuration API
 	' ------------------------------------------------------------
-	
+
 	Method getKey:String(sectionName:String, keyName:String)
 		Return Self.m_Config.getKey(sectionName, keyName)
 	End Method
-	
-	
+
+
 	' ------------------------------------------------------------
 	' -- Standard service methods
 	' ------------------------------------------------------------
 
 	Method InitialiseService()
-		
+
 		' Load configuration file
 		Self.m_Config	= New Config
 		IniConfigSerializer.Load(Self.m_Config, File_Util.pathcombine(AppDir, "docgen.ini"))
-		
+
 		' TODO: Check that important values are set
-		
+
 	End Method
-	
+
 	Method UnloadService()
-		
+
 		' Save settings
 		Self.m_Config = Null
 		GCCollect()
-		
+
 	End Method
-	
-	
+
+
 	' ------------------------------------------------------------
 	' -- Construction & Destruction
 	' ------------------------------------------------------------
-	
+
 	Method New()
-	
+
 	End Method
 
 End Type

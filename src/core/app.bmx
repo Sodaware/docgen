@@ -4,7 +4,7 @@
 ' -- Main application logic. Handles pretty much everything.
 ' --
 ' -- This file is part of "docgen" (https://www.sodaware.net/docgen/)
-' -- Copyright (c) 2016-2017 Phil Newton
+' -- Copyright (c) 2016-2019 Phil Newton
 ' --
 ' -- See COPYING for full license information.
 ' ------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ Import "../formatters/json_formatter.bmx"
 ''' <summary>Main docgen application.</summary>
 Type App
 
-	Field _options:ConsoleOptions			'''< Command line options
-	Field _services:ServiceManager			'''< Application services
+	Field _options:ConsoleOptions           '''< Command line options
+	Field _services:ServiceManager          '''< Application services
 
 
 	' ------------------------------------------------------------
@@ -44,7 +44,7 @@ Type App
 	' ------------------------------------------------------------
 
 	''' <summary>Application entry point.</summary>
-	Method Run:Int()
+	Method run:Int()
 
 		' -- Setup the app
 		Self._setup()
@@ -161,7 +161,7 @@ Type App
 	' ------------------------------------------------------------
 
 	Function Create:App()
-		Local this:App	= New App
+		Local this:App = New App
 		Return this
 	End Function
 
