@@ -1,0 +1,116 @@
+{
+  "docgen": {
+    "version": "0.1.0.0",
+    "created_at": "09 Oct 2019 12:03:24"
+  },
+  "files": [
+    {
+      "name": "simple_example.bmx",
+      "last_modified": "2019-10-9 10:42:43",
+      "globals": [
+        {
+          "name": "thisIsMyName",
+          "type": "String",
+          "defaultValue": "\"My Name\"",
+          "summary": "Name of the person.",
+          "description": "",
+          "seeAlso": "",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "name": "thisIsMyAge",
+          "type": "Int",
+          "defaultValue": "21",
+          "summary": "",
+          "description": "",
+          "seeAlso": "",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "name": "thisIsMySalary",
+          "type": "Int",
+          "defaultValue": "10.50",
+          "summary": "",
+          "description": "",
+          "seeAlso": "",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "name": "thisIsMyExample",
+          "type": "SimpleExample",
+          "defaultValue": "New SimpleExample",
+          "summary": "This is a longer summary that may or may not have multiple lines. And also a line break.",
+          "description": "",
+          "seeAlso": "SimpleExample",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "name": "Global",
+          "type": "functionthisIsMyFunction:String=thisIsMyExample.sayGoodbye()",
+          "defaultValue": "",
+          "summary": "",
+          "description": "",
+          "seeAlso": "",
+          "line": 21,
+          "column": 1
+        }
+      ],
+      "constants": [
+        {
+          "name": "SOMETHING_HERE",
+          "type": "String",
+          "defaultValue": "\"I AM A CONSTANT!\"",
+          "summary": "",
+          "description": "",
+          "seeAlso": "",
+          "line": 5,
+          "column": 1
+        }
+      ],
+      "types": [
+        {
+          "name": "SimpleExample",
+          "summary": "Hello",
+          "description": "",
+          "methods": [
+            {
+              "name": "sayHello",
+              "summary": "",
+              "returnType": "",
+              "returnDescription": "",
+              "seeAlso": "",
+              "example": "",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": "String",
+                  "defaultValue": "",
+                  "description": "",
+                  "isArray": false,
+                  "isVar": false,
+                  "isVarPtr": false,
+                  "isFunctionPointer": false
+                }
+              ]
+            },
+            {
+              "name": "sayGoodbye",
+              "summary": "",
+              "returnType": "String",
+              "returnDescription": "",
+              "seeAlso": "",
+              "example": ""
+            }
+          ],
+          "line": 29,
+          "column": 1
+        }
+      ],
+      "functions": []
+    }
+  ]
+}
