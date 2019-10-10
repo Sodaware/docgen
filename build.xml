@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<project name="docgen" default="make">
+
+  <!-- Load properties -->
+  <property file="${project::get-buildfile-path()}/global.properties" />
+
+  <!-- Output properties -->
+  <property name="build.paths.base"   value="${project::get-buildfile-path()}" />
+  <property name="build.paths.source" value="${build.paths.base}/src" />
+  <property name="build.paths.output" value="${build.paths.base}/build" />
+  <property name="build.paths.dist"   value="${build.paths.base}/dist" />
+
+
+  <!-- ======================================================================
+       == Compilation
+       ====================================================================== -->
+
+  <target name="make" description="Build the app in debug mode">
+    <bmk action="makeapp" threaded="true" gui="false"
+         output="${build.paths.output}/${app.name}"
+         source="${build.paths.source}/main.bmx" />
+  </target>
+
+  <target name="make:release" description="Build the app in release mode">
+    <bmk action="makeapp" threaded="true" gui="false" debug="false"
+         output="${build.paths.output}/${app.name}"
+         source="${build.paths.source}/main.bmx" />
+  </target>
+
+
+  <!-- ======================================================================
+       == Packaging for release
+       ====================================================================== -->
+
+  <target name="package"
+          description="Build the app and package in a zip file."
+          depends="make:release">
+    <property name="package.name"  value="${app.name}-${app.version}" />
+    <property name="package.dir"   value="${build.paths.dist}/${package.name}" />
+    <property name="package.file"  value="${package.name}-${environment::get-operating-system()}.zip" />
+    <property name="app.extension" value="${environment::get-app-extension()}" />
+
+    <!-- Make package dir if not present -->
+    <mkdir dir="${package.dir}" />
+
+    <!-- Remove existing files from package dir -->
+    <delete>
+      <fileset dir="${package.dir}">
+        <include name="*" />
+      </fileset>
+    </delete>
+
+    <!-- Copy executable -->
+    <copy file="${build.paths.output}/${app.name}${app.extension}"
+          tofile="${package.dir}/${app.name}${app.extension}"
+          overwrite="true" />
+
+    <!-- Copy readme and other files -->
+    <copy file="${build.paths.base}/README.md"
+          tofile="${package.dir}/README.md"
+          overwrite="true" />
+
+    <copy file="${build.paths.base}/COPYING"
+          tofile="${package.dir}/COPYING"
+          overwrite="true" />
+
+    <!-- zip it all up -->
+    <zip destfile="${build.paths.dist}/${package.file}" verbose="true">
+      <fileset dir="${package.dir}">
+        <include name="*" />
+      </fileset>
+    </zip>
+  </target>
+
+</project>
