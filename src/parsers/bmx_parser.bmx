@@ -425,13 +425,12 @@ Type BmxParser
 
 	End Method
 
-	' TODO: Update this to use prime.xml
 	Method parseXmlComment(descriptor:AbstractDescriptor)
 
 		Local comment:String = descriptor.comments.Replace("'''", "")
 		comment = "<docString>" + comment + "</docString>"
 
-		' Attempt to parse
+		' Attempt to parse.
 		Local commentDoc:TxmlDoc = TxmlDoc.parseDoc(comment)
 		If commentDoc = Null Then Return
 
@@ -477,8 +476,6 @@ Type BmxParser
 						message :+ " (" + descriptor.file.getFileName() + ")"
 						Self._log.logWarning(message)
 					EndIf
-
-
 
 			End Select
 		Next
